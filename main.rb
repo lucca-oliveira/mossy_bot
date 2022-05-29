@@ -1,7 +1,6 @@
 require 'discordrb'
 require 'dotenv'
 require 'pry'
-require 'youtube-dl'
 
 Dotenv.load('.env')
 
@@ -11,17 +10,18 @@ bot.command :ping do |msg|
   msg.respond 'aaaaaaaaaa'
 end
 
+bot.command :fideliz do |msg|
+  msg.respond 'corno broxa calvo careca corno manso gay boiola viado'
+end
+
 bot.command :play do |event|
   channel = event.user.voice_channel
 
   next 'Você não está conectado em nenhum canal de voz ;(' unless channel
 
-  # link = 'https://www.youtube.com/watch?v=zysxaJNLtSU&ab_channel=LameGhoulMusic'
-  # YoutubeDL.download link, output: 'file.mp3'
-
-  # bot.voice_connect(channel)
-  # voice_bot = event.voice
-  # voice_bot.play_file('file.mp3')
+  bot.voice_connect(channel)
+  voice_bot = event.voice
+  voice_bot.play_file('tmp/musica.mp3')
 end
 
 bot.command :stop do |event|
@@ -35,11 +35,15 @@ end
 bot.command :pause do |event|
   voice_bot = event.voice
   voice_bot.pause
+
+  msg.respond ''
 end
 
 bot.command :resume do |event|
   voice_bot = event.voice
   voice_bot.continue
+
+  msg.respond ''
 end
 
 bot.run
