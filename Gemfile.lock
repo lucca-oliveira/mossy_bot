@@ -1,0 +1,105 @@
+GIT
+  remote: https://github.com/joshmn/youtube-dl.rb.git
+  revision: 8a9c81cacf438868b3a4c26b44554a1d9e32b0e0
+  specs:
+    youtube-dl.rb (0.3.1.2016.09.11.1)
+      cocaine (>= 0.5.4)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ast (2.4.2)
+    awesome_print (1.9.2)
+    climate_control (0.2.0)
+    cocaine (0.6.0)
+      terrapin (= 0.6.0)
+    coderay (1.1.3)
+    discordrb (3.4.0)
+      discordrb-webhooks (~> 3.3.0)
+      ffi (>= 1.9.24)
+      opus-ruby
+      rest-client (>= 2.0.0)
+      websocket-client-simple (>= 0.3.0)
+    discordrb-webhooks (3.3.0)
+      rest-client (>= 2.1.0.rc1)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.8.1)
+    event_emitter (0.2.6)
+    ffi (1.15.5)
+    http-accept (1.7.0)
+    http-cookie (1.0.5)
+      domain_name (~> 0.5)
+    json (2.6.3)
+    listen (3.7.1)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
+    method_source (1.0.0)
+    mime-types (3.4.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2022.0105)
+    netrc (0.11.0)
+    open3 (0.1.2)
+    opus-ruby (1.0.1)
+      ffi
+    parallel (1.22.1)
+    parser (3.1.3.0)
+      ast (~> 2.4.1)
+    pry (0.14.1)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    rainbow (3.1.1)
+    rb-fsevent (0.11.2)
+    rb-inotify (0.10.1)
+      ffi (~> 1.0)
+    regexp_parser (2.6.1)
+    rerun (0.13.1)
+      listen (~> 3.0)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
+    rexml (3.2.5)
+    rubocop (1.40.0)
+      json (~> 2.3)
+      parallel (~> 1.10)
+      parser (>= 3.1.2.1)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.23.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 3.0)
+    rubocop-ast (1.24.0)
+      parser (>= 3.1.1.0)
+    ruby-progressbar (1.11.0)
+    terrapin (0.6.0)
+      climate_control (>= 0.0.3, < 1.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.8.2)
+    unicode-display_width (2.3.0)
+    websocket (1.2.9)
+    websocket-client-simple (0.6.0)
+      event_emitter
+      websocket
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  awesome_print
+  discordrb
+  dotenv
+  open3
+  pry
+  rerun
+  rubocop
+  youtube-dl.rb!
+
+RUBY VERSION
+   ruby 3.1.3p185
+
+BUNDLED WITH
+   2.3.22

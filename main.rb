@@ -1,49 +1,28 @@
+# frozen_string_literal: true
+
 require 'discordrb'
 require 'dotenv'
 require 'pry'
+require 'open3'
+require 'youtube-dl.rb'
 
 Dotenv.load('.env')
 
 bot = Discordrb::Commands::CommandBot.new token: ENV['TOKEN'].to_s, client_id: ENV['CLIENT_ID'].to_s, prefix: ENV['PREFIX'].to_s
 
 bot.command :ping do |msg|
-  msg.respond 'aaaaaaaaaa'
+  msg.respond 'pong'
 end
 
-bot.command :fideliz do |msg|
-  msg.respond 'corno broxa calvo careca corno manso gay boiola viado'
-end
+bot.command :play do |event, url|
+  # Download the video using youtube-dl
+  video = YoutubeDL.download(url)
 
-bot.command :play do |event|
-  channel = event.user.voice_channel
-
-  next 'Você não está conectado em nenhum canal de voz ;(' unless channel
-
-  bot.voice_connect(channel)
-  voice_bot = event.voice
-  voice_bot.play_file('tmp/musica.mp3')
-end
-
-bot.command :stop do |event|
-  voice_bot = event.voice
-  voice_bot.stop_playing
-  voice_bot.destroy
-
-  msg.respond ''
-end
-
-bot.command :pause do |event|
-  voice_bot = event.voice
-  voice_bot.pause
-
-  msg.respond ''
-end
-
-bot.command :resume do |event|
-  voice_bot = event.voice
-  voice_bot.continue
-
-  msg.respond ''
+  # Use ffmpeg to stream the video to the voice channel
+  Open3.popen3("ffmpeg -i #{video.path} -ac 2 -f s16le -ar 48000 pipe:1") do |stdin, stdout, _|
+    bot.voice_connect(event.user.voice_channel)
+    bot.voice_play(stdout)
+  end
 end
 
 bot.run
