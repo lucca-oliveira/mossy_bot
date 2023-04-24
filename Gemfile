@@ -18,5 +18,3 @@ gem 'pry'
 gem 'rerun'
 # Linting
 gem 'rubocop'
-# YoutubeDL
-gem 'yt'
