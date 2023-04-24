@@ -14,7 +14,7 @@ Yt.configure do |config|
 end
 
 bot.command :ping do |msg|
-  msg.respond 'pong'
+  msg.respond 'pongg'
 end
 
 bot.command :play do |event, *args|
