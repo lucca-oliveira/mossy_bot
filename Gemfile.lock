@@ -1,19 +1,15 @@
-GIT
-  remote: https://github.com/joshmn/youtube-dl.rb.git
-  revision: 8a9c81cacf438868b3a4c26b44554a1d9e32b0e0
-  specs:
-    youtube-dl.rb (0.3.1.2016.09.11.1)
-      cocaine (>= 0.5.4)
-
 GEM
   remote: https://rubygems.org/
   specs:
+    activesupport (7.0.4.2)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
     ast (2.4.2)
     awesome_print (1.9.2)
-    climate_control (0.2.0)
-    cocaine (0.6.0)
-      terrapin (= 0.6.0)
     coderay (1.1.3)
+    concurrent-ruby (1.2.0)
     discordrb (3.4.0)
       discordrb-webhooks (~> 3.3.0)
       ffi (>= 1.9.24)
@@ -30,6 +26,8 @@ GEM
     http-accept (1.7.0)
     http-cookie (1.0.5)
       domain_name (~> 0.5)
+    i18n (1.12.0)
+      concurrent-ruby (~> 1.0)
     json (2.6.3)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -38,6 +36,7 @@ GEM
     mime-types (3.4.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2022.0105)
+    minitest (5.17.0)
     netrc (0.11.0)
     open3 (0.1.2)
     opus-ruby (1.0.1)
@@ -74,8 +73,8 @@ GEM
     rubocop-ast (1.24.0)
       parser (>= 3.1.1.0)
     ruby-progressbar (1.11.0)
-    terrapin (0.6.0)
-      climate_control (>= 0.0.3, < 1.0)
+    tzinfo (2.0.5)
+      concurrent-ruby (~> 1.0)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.2)
@@ -84,6 +83,8 @@ GEM
     websocket-client-simple (0.6.0)
       event_emitter
       websocket
+    yt (0.33.4)
+      activesupport
 
 PLATFORMS
   x86_64-linux
@@ -96,7 +97,7 @@ DEPENDENCIES
   pry
   rerun
   rubocop
-  youtube-dl.rb!
+  yt
 
 RUBY VERSION
    ruby 3.1.3p185

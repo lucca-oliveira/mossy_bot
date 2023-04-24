@@ -19,4 +19,4 @@ gem 'rerun'
 # Linting
 gem 'rubocop'
 # YoutubeDL
-gem 'youtube-dl.rb', github: 'joshmn/youtube-dl.rb'
+gem 'yt'
